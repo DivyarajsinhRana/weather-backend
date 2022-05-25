@@ -1,8 +1,10 @@
 const express = require('express');
 const requests = require('requests');
 const { apikey } = require('./config');
-
+const cors = require('cors')
 const app = express();  //initialize app
+
+app.use(cors())
 
 app.get('/',(req,res)=>{
     res.send('welcome to home page')
