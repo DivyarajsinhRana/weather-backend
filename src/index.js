@@ -3,6 +3,7 @@ const requests = require('requests');
 const { apikey } = require('./config');
 const cors = require('cors')
 const app = express();  //initialize app
+const port = process.env.PORT || 8000
 
 app.use(cors())
 
@@ -24,6 +25,6 @@ app.get('/temp',(req,res)=>{
 app.get('*',(req,res)=>{
     res.send('error 404!,record not found...')
 });
-app.listen(8000,()=>{
-    console.log('server run on port 8000');
+app.listen(port,()=>{
+    console.log(`server run on port ${port}`);
 })
